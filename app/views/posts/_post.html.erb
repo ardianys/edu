@@ -1,17 +1,14 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<article class="blog-post">
+  <div id="<%= dom_id post %>">
+    <h2 class="display-5 link-body-emphasis mb-1"><%= post.title %></h2>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
+    <p>
+      <%= post.content %>
+    </p>
 
-  <p>
-    <strong>Pict:</strong>
-    <%= post.pict %>
-  </p>
+    <p>
+      <%= post.pict %>
+    </p>
 
-</div>
+  </div>
+</article>
