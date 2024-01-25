@@ -1,0 +1,28 @@
+Milestone 1
+Minimum Viable Product (MVP)
+
+1. Mengumpulkan cerita atau skenario yang mungkin terjadi di sistem yang akan dibuat
+
+- menentukan subject yang berinteraksi dengan sistem
+- menentukan aliran data antar subject
+
+Subject
+1. santri
+2. guru
+3. admin
+4. kepala sekolah (sunnah)
+5. orang tua santri (sunnah)
+
+Aliran data
+1. Admin menginput data audio
+2. Admin mengatur jadwal player
+
+Milestone 2
+Setelah dapat feedback dari client
+
+Milestone 3
+
+Milestone 4
+
+Milestone 5
+
