@@ -1,0 +1,7 @@
+rails g migration AddUserIdToPost
+rails db:migrate
+
+post = Post.find 2
+post
+post.user
+post.user.update(name: 'Wartawan Senior')

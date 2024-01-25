@@ -7,7 +7,11 @@
     </p>
 
     <p>
-      <%= post.pict %>
+      <%= image_tag(post.pict.url, class: 'img-fluid') if post.pict? %>
+    </p>
+
+    <p>
+      <%= post.user.name if post.user %>
     </p>
 
   </div>
