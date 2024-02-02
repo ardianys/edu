@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Enter title" %>
   </div>
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
+    <%= form.rich_text_area :content %>
   </div>
 
-  <div>
-    <%= form.label :pict, style: "display: block" %>
-    <%= form.file_field :pict %>
+  <div class="mb-3">
+    <%= form.label :pict, class: "form-label" %>
+    <%= form.file_field :pict, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
