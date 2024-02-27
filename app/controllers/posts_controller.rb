@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
 
+    if current_user.role == 'ADMIN'
+      @post.approved = true
+    end
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -39,6 +43,11 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    if @post.created_at < 1.week.ago
+      @post.errors.add(:base, "You can't edit a post that is older than a week.")
+      return render :edit, status: :unprocessable_entity
+    end
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
