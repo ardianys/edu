@@ -14,3 +14,7 @@
  *= require_tree .
  *= require_self
  */
+
+.rounded-circle-10 {
+  border-radius: 10% !important;
+}
