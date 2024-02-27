@@ -1,17 +1,95 @@
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
+<section class="text-center container">
+  <div class="row">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">Selamat Datang</h1>
-      <img class="img-fluid rounded-circle-10" src="/logo-black.png" alt="Placeholder image">
+      <img class="img-fluid rounded-circle-10" src="/logo-black.png" alt="Placeholder image" width="100">
       <p class="lead text-body-secondary">
         Islamic Digital Education Platform
       </p>
       <p class="lead text-body-secondary">
         Dreizehn Soft Edukasi adalah platform pembelajaran digital yang menyediakan berbagai macam materi pembelajaran yang dapat diakses oleh siapa saja, kapan saja, dan dimana saja.
       </p>
+      <% unless current_user %>
       <p>
         <a href="<%= new_user_session_path %>" class="btn btn-primary my-2">Login Untuk Memulai</a>
       </p>
+      <% end %>
     </div>
   </div>
 </section>
+
+<% if current_user %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/quran.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Quran
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/hadits.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Hadits
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/kitabisa.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Kitabisa
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/pdf.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Pdf
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/instagram.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Instagram
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card mb-4 shadow-sm">
+            <img src="/youtube.webp" class="bd-placeholder-img card-img-top" width="100%">
+            <div class="card-body">
+              <p class="card-text text-center">
+                Youtube
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+<% end %>
