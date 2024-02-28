@@ -7,7 +7,15 @@ User.create(
   password: "password",
   password_confirmation: "password",
   name: "Admin",
-  role: "admin"
+  role: "ADMIN"
+)
+
+User.create(
+  email: "user@edu.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "User",
+  role: "USER"
 )
 
 # Create a new campaign
