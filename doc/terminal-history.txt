@@ -5,3 +5,16 @@ post = Post.find 2
 post
 post.user
 post.user.update(name: 'Wartawan Senior')
+
+
+# untuk mereset content
+rails db:reset
+
+# tandem 3 command, untuk mereset struktur db
+rails db:drop
+rails db:create
+rails db:migrate
+
+# untuk generate data awal
+rails db:seed
+
