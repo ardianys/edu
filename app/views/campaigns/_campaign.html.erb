@@ -1,32 +1,20 @@
-<div id="<%= dom_id campaign %>">
-  <p>
-    <strong>Title:</strong>
-    <%= campaign.title %>
-  </p>
+<div class="col" id="<%= dom_id campaign %>">
+  <div class="card shadow-sm">
+    <img src="<%= campaign.picture %>" class="card-img-top" alt="<%= campaign.title %>">
+    <div class="card-body">
+      <p class="card-text"><%= campaign.title %></p>
+      <p class="card-text"><%= campaign.content %></p>
+      <p class="card-text"><%= campaign.total %></p>
+      <p class="card-text"><%= campaign.target %></p>
+      <p class="card-text"><%= campaign.close_at %></p>
 
-  <p>
-    <strong>Picture:</strong>
-    <%= campaign.picture %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= campaign.content %>
-  </p>
-
-  <p>
-    <strong>Total:</strong>
-    <%= campaign.total %>
-  </p>
-
-  <p>
-    <strong>Target:</strong>
-    <%= campaign.target %>
-  </p>
-
-  <p>
-    <strong>Close at:</strong>
-    <%= campaign.close_at %>
-  </p>
-
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-body-secondary">9 mins</small>
+      </div>
+    </div>
+  </div>
 </div>
