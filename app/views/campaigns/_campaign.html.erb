@@ -10,8 +10,14 @@
 
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          <%= link_to campaign_path(campaign) do %>
+            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <% end %>
+          <% if current_user && current_user.admin? %>
+            <%= link_to edit_campaign_path(campaign) do %>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            <% end %>
+          <% end %>
         </div>
         <small class="text-body-secondary">9 mins</small>
       </div>

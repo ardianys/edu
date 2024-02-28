@@ -2,12 +2,10 @@
 
 <h1>Campaigns</h1>
 
-<div id="campaigns">
-    <p>
-    </p>
-</div>
+<% if current_user && current_user.admin? %>
+  <%= link_to "New campaign", new_campaign_path %>
+<% end %>
 
-<%= link_to "New campaign", new_campaign_path %>
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
