@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_28_010435) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_020936) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -70,6 +70,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_010435) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "donations", force: :cascade do |t|
+    t.integer "campaign_id", null: false
+    t.integer "amount"
+    t.string "name"
+    t.string "email"
+    t.string "telephone"
+    t.boolean "anonymous"
+    t.string "payment_type"
+    t.string "dua"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_donations_on_campaign_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -98,4 +112,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_010435) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "donations", "campaigns"
 end

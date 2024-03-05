@@ -1,0 +1,41 @@
+<div id="<%= dom_id donation %>">
+  <p>
+    <strong>Campaign:</strong>
+    <%= donation.campaign_id %>
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= donation.amount %>
+  </p>
+
+  <% if !donation.anonymous %>
+    <p>
+      <strong>Name:</strong>
+      <%= donation.name %>
+    </p>
+  <% end %>
+
+  <% if current_user.role == 'ADMIN' %>
+    <p>
+      <strong>Email:</strong>
+      <%= donation.email %>
+    </p>
+
+    <p>
+      <strong>Telephone:</strong>
+      <%= donation.telephone %>
+    </p>
+  <% end %>
+
+  <p>
+    <strong>Payment type:</strong>
+    <%= donation.payment_type %>
+  </p>
+
+  <p>
+    <strong>Dua:</strong>
+    <%= donation.dua %>
+  </p>
+
+</div>

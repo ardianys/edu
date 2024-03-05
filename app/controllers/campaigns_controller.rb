@@ -1,6 +1,11 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: %i[ show edit update destroy ]
 
+  def contribute
+    @campaign = Campaign.find(params[:id])
+    @donation = Donation.new(campaign: @campaign)
+  end
+
   # GET /campaigns or /campaigns.json
   def index
     @campaigns = Campaign.all
