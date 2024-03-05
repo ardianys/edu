@@ -1,47 +1,68 @@
-<%= form_with(model: campaign) do |form| %>
-  <% if campaign.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+<div class="col-md-7 col-lg-8">
+  <%= form_with(model: campaign) do |form| %>
+    <div class="row g-3">
+      <% if campaign.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
 
-      <ul>
-        <% campaign.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% campaign.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="col-12">
+        <%= form.label :title, style: "display: block", class: "form-label" %>
+        <%= form.text_field :title, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your title.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <%= form.label :picture, style: "display: block", class: "form-label" %>
+        <%= form.text_field :picture, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your picture.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <%= form.label :content, style: "display: block", class: "form-label" %>
+        <%= form.text_field :content, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your content.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <%= form.label :total, style: "display: block", class: "form-label" %>
+        <%= form.text_field :total, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your total.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <%= form.label :target, style: "display: block", class: "form-label" %>
+        <%= form.text_field :target, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your target.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <%= form.label :close_at, style: "display: block", class: "form-label" %>
+        <%= form.datetime_field :close_at, class: "form-control", id: "address", required: true %>
+        <div class="invalid-feedback">
+          Please enter your close_at.
+        </div>
+      </div>
     </div>
+
+    <hr class="my-4">
+    <button class="w-100 btn btn-primary btn-lg" type="submit">Update</button>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :picture, style: "display: block" %>
-    <%= form.text_field :picture %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div>
-    <%= form.label :total, style: "display: block" %>
-    <%= form.number_field :total %>
-  </div>
-
-  <div>
-    <%= form.label :target, style: "display: block" %>
-    <%= form.number_field :target %>
-  </div>
-
-  <div>
-    <%= form.label :close_at, style: "display: block" %>
-    <%= form.datetime_field :close_at %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
