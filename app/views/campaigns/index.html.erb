@@ -10,7 +10,7 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <% @campaigns.each do |campaign| %>
-        <%= render campaign %>
+        <%= render 'card_campaign', campaign: campaign %>
       <% end %>
     </div>
   </div>
