@@ -1,41 +1,32 @@
-<div id="<%= dom_id donation %>">
-  <p>
-    <strong>Campaign:</strong>
-    <%= donation.campaign_id %>
-  </p>
+<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+  <div class="d-flex gap-2 w-100 justify-content-between">
+    <div>
+      <h6 class="mb-0">
+        <% if donation.anonymous %>
+          Hamba Allah
+        <% else %>
+          <%= donation.name %>
+        <% end %>
+      </h6>
+      <p class="mb-0 opacity-75">
+        Berdonasi sebesar <%= donation.amount %> melalui <%= donation.payment_type %>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= donation.amount %>
-  </p>
+        <% if current_user.role == 'ADMIN' %>
+            <strong>Email:</strong> <%= donation.email %>
+            <strong>Telephone:</strong> <%= donation.telephone %>
+        <% end %>
+      </p>
+    </div>
+    <small class="opacity-50 text-nowrap">
+      <%= time_ago_in_words(donation.created_at) %> yang lalu
+    </small>
+  </div>
+</a>
 
-  <% if !donation.anonymous %>
-    <p>
-      <strong>Name:</strong>
-      <%= donation.name %>
-    </p>
-  <% end %>
-
-  <% if current_user.role == 'ADMIN' %>
-    <p>
-      <strong>Email:</strong>
-      <%= donation.email %>
-    </p>
-
-    <p>
-      <strong>Telephone:</strong>
-      <%= donation.telephone %>
-    </p>
-  <% end %>
-
-  <p>
-    <strong>Payment type:</strong>
-    <%= donation.payment_type %>
-  </p>
-
+<!--
   <p>
     <strong>Dua:</strong>
     <%= donation.dua %>
   </p>
-
-</div>
+-->
