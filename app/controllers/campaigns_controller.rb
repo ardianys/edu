@@ -13,6 +13,10 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns/1 or /campaigns/1.json
   def show
+    @donations_doas = @campaign.donations.where.not(dua: '')
+    #  SELECT "donations".* FROM "donations"
+    #  WHERE "donations"."campaign_id" = ? AND "donations"."dua" != ?
+    #  [["campaign_id", 1], ["dua", ""]]
   end
 
   # GET /campaigns/new

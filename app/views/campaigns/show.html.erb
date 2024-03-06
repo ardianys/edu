@@ -4,6 +4,8 @@
 
 <%= render 'index_donations', donations: @campaign.donations %>
 
+<%= render 'index_donations_doas', donations: @donations_doas %>
+
 <div>
   <%= link_to "Donasi Sekarang", contribute_campaign_path(@campaign), class: "btn btn-primary btn-lg px-4 gap-3" %>
   <%= link_to "Back to campaigns", campaigns_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
