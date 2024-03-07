@@ -140,23 +140,47 @@
 
       <div class="nav-scroller py-1 mb-3 border-bottom">
         <nav class="nav nav-underline justify-content-between">
-          <a class="nav-item nav-link link-body-emphasis active" href="#">Al-Qur'an</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Hadits</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Donasi</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Buku</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Galeri</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Video</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Belajar</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">PSB</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">SPP</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Absen</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Mutabaah</a>
-          <a class="nav-item nav-link link-body-emphasis" href="#">Toko</a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Al-Qur'an
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Hadits
+          </a>
+          <a class="nav-item nav-link link-body-emphasis <%= 'active' if current_page?(campaigns_path) %>" href="<%= campaigns_path %>">
+            Donasi
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Buku
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Galeri
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Video
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Belajar
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            PSB
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            SPP
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Absen
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Mutabaah
+          </a>
+          <a class="nav-item nav-link link-body-emphasis" href="<%= root_path %>">
+            Toko
+          </a>
         </nav>
       </div>
     </div>
 
-    <main class="container">
+    <main>
       <% if notice %>
         <div class="alert alert-success" role="alert">
           <%= notice %>

@@ -2,8 +2,15 @@
   <div class="card shadow-sm">
     <img src="<%= campaign.picture %>" class="card-img-top" alt="<%= campaign.title %>">
     <div class="card-body">
-      <p class="card-text"><%= campaign.title %></p>
-      <p class="card-text">Total: <%= campaign.total %></p>
+      <h3><%= campaign.title %></h3>
+      <p class="card-text">
+        Terkumpul
+        <span class="text-success">
+          <strong>
+            <%= number_to_currency(campaign.total, unit: 'Rp', precision: 0, delimiter: '.', format: '%u%n') %>
+          </strong>
+        </span>
+      </p>
       <p class="card-text">Target: <%= campaign.target %></p>
       <p class="card-text">Ditutup: <%= campaign.close_at %></p>
 

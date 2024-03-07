@@ -1,10 +1,9 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Campaigns</h1>
-
-<% if current_user && current_user.admin? %>
-  <%= link_to "New campaign", new_campaign_path %>
-<% end %>
+<div class="container py-3">
+    <% if current_user && current_user.admin? %>
+      <%= link_to "New campaign", new_campaign_path, class: "btn btn-primary" %>
+    <% end %>
+</div>
 
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
