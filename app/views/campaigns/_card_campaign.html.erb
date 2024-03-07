@@ -1,6 +1,11 @@
 <div class="col" id="<%= dom_id campaign %>">
   <div class="card shadow-sm">
-    <img src="<%= campaign.picture %>" class="card-img-top" alt="<%= campaign.title %>">
+    <div class="position-relative">
+      <img src="<%= campaign.picture %>" class="card-img-top" alt="<%= campaign.title %>">
+      <div class="position-absolute top-0 start-0 p-2 bg-success text-white">
+        <%= time_ago_in_words campaign.close_at %> remaining
+      </div>
+    </div>
     <div class="card-body">
       <h3><%= campaign.title %></h3>
       <p class="card-text">
@@ -11,10 +16,11 @@
           </strong>
         </span>
       </p>
-      <p class="card-text">Target: <%= campaign.target %></p>
-      <p class="card-text">Ditutup: <%= campaign.close_at %></p>
+      <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: <%= (campaign.total.to_f / campaign.target * 100).to_i %>%"></div>
+      </div>
 
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center mt-3">
         <div class="btn-group">
           <%= link_to campaign_path(campaign) do %>
             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -25,7 +31,6 @@
             <% end %>
           <% end %>
         </div>
-        <small class="text-body-secondary">9 mins</small>
       </div>
     </div>
   </div>
