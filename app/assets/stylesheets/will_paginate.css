@@ -1,5 +1,5 @@
 .apple_pagination {
-  background: #badeb2;
+  background: #DBE7C9;
   border: 1px solid #e5e5e5;
   text-align: center;
   padding: 1em;
@@ -18,7 +18,7 @@
 .apple_pagination .current {
   font-style: normal;
   font-weight: bold;
-  background-color: #10bb1f;
+  background-color: #789461;
   display: inline-block;
   width: 1.4em;
   height: 1.4em;
