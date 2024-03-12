@@ -8,7 +8,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns or /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /campaigns/1 or /campaigns/1.json
