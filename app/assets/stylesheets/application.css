@@ -18,3 +18,7 @@
 .rounded-circle-10 {
   border-radius: 10% !important;
 }
+
+.campaign_label {
+  background-color: #294B29;
+}
