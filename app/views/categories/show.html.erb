@@ -1,10 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="text-center">
+  <%= @category.title %>
+</h1>
 
-<%= render @category %>
+<% if current_user && current_user.admin? %>
+  <div class="text-center">
+    <%= link_to "Edit", edit_category_path(@category) %>
+    <%= link_to "Index", categories_path %>
+  </div>
+<% end %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @campaigns.each do |campaign| %>
+        <%= render 'campaigns/card_campaign', campaign: campaign %>
+      <% end %>
+    </div>
+    <div class="apple_pagination mt-3">
+      <%= will_paginate @campaigns %>
+    </div>
+  </div>
 </div>
+
+
+<% if current_user && current_user.admin? %>
+  <div class="text-center">
+    <%= button_to "Destroy", @category, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+<% end %>

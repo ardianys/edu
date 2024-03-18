@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @campaigns = Campaign.where(category: @category).paginate(page: params[:page], per_page: 6)
   end
 
   # GET /categories/new
