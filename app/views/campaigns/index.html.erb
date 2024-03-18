@@ -1,8 +1,17 @@
-<p style="color: green"><%= notice %></p>
 <div class="container py-3">
     <% if current_user && current_user.admin? %>
       <%= link_to "New campaign", new_campaign_path, class: "btn btn-primary my-button" %>
     <% end %>
+</div>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @categories.each do |category| %>
+        <%= render 'card_category', category: category %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="album py-5 bg-body-tertiary">
