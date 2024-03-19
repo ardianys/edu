@@ -25,7 +25,7 @@ class SppInvoicesController < ApplicationController
 
     respond_to do |format|
       if @spp_invoice.save
-        format.html { redirect_to spp_invoice_url(@spp_invoice), notice: "Spp invoice was successfully created." }
+        format.html { redirect_to spp_invoice_url(@spp_invoice), notice: "SPP invoice was successfully created." }
         format.json { render :show, status: :created, location: @spp_invoice }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SppInvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @spp_invoice.update(spp_invoice_params)
-        format.html { redirect_to spp_invoice_url(@spp_invoice), notice: "Spp invoice was successfully updated." }
+        format.html { redirect_to spp_invoice_url(@spp_invoice), notice: "SPP invoice was successfully updated." }
         format.json { render :show, status: :ok, location: @spp_invoice }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SppInvoicesController < ApplicationController
     @spp_invoice.destroy!
 
     respond_to do |format|
-      format.html { redirect_to spp_invoices_url, notice: "Spp invoice was successfully destroyed." }
+      format.html { redirect_to spp_invoices_url, notice: "SPP invoice was successfully destroyed." }
       format.json { head :no_content }
     end
   end

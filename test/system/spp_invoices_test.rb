@@ -7,7 +7,7 @@ class SppInvoicesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit spp_invoices_url
-    assert_selector "h1", text: "Spp invoices"
+    assert_selector "h1", text: "SPP invoices"
   end
 
   test "should create spp invoice" do
@@ -16,34 +16,34 @@ class SppInvoicesTest < ApplicationSystemTestCase
 
     fill_in "Amount", with: @spp_invoice.amount
     fill_in "Paid amount", with: @spp_invoice.paid_amount
-    fill_in "Spp category", with: @spp_invoice.spp_category_id
-    fill_in "Spp student", with: @spp_invoice.spp_student_id
+    fill_in "SPP category", with: @spp_invoice.spp_category_id
+    fill_in "SPP student", with: @spp_invoice.spp_student_id
     fill_in "Status", with: @spp_invoice.status
-    click_on "Create Spp invoice"
+    click_on "Create SPP invoice"
 
-    assert_text "Spp invoice was successfully created"
+    assert_text "SPP invoice was successfully created"
     click_on "Back"
   end
 
-  test "should update Spp invoice" do
+  test "should update SPP invoice" do
     visit spp_invoice_url(@spp_invoice)
     click_on "Edit this spp invoice", match: :first
 
     fill_in "Amount", with: @spp_invoice.amount
     fill_in "Paid amount", with: @spp_invoice.paid_amount
-    fill_in "Spp category", with: @spp_invoice.spp_category_id
-    fill_in "Spp student", with: @spp_invoice.spp_student_id
+    fill_in "SPP category", with: @spp_invoice.spp_category_id
+    fill_in "SPP student", with: @spp_invoice.spp_student_id
     fill_in "Status", with: @spp_invoice.status
-    click_on "Update Spp invoice"
+    click_on "Update SPP invoice"
 
-    assert_text "Spp invoice was successfully updated"
+    assert_text "SPP invoice was successfully updated"
     click_on "Back"
   end
 
-  test "should destroy Spp invoice" do
+  test "should destroy SPP invoice" do
     visit spp_invoice_url(@spp_invoice)
     click_on "Destroy this spp invoice", match: :first
 
-    assert_text "Spp invoice was successfully destroyed"
+    assert_text "SPP invoice was successfully destroyed"
   end
 end

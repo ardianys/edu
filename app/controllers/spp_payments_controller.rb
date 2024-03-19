@@ -25,7 +25,7 @@ class SppPaymentsController < ApplicationController
 
     respond_to do |format|
       if @spp_payment.save
-        format.html { redirect_to spp_payment_url(@spp_payment), notice: "Spp payment was successfully created." }
+        format.html { redirect_to spp_payment_url(@spp_payment), notice: "SPP payment was successfully created." }
         format.json { render :show, status: :created, location: @spp_payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SppPaymentsController < ApplicationController
   def update
     respond_to do |format|
       if @spp_payment.update(spp_payment_params)
-        format.html { redirect_to spp_payment_url(@spp_payment), notice: "Spp payment was successfully updated." }
+        format.html { redirect_to spp_payment_url(@spp_payment), notice: "SPP payment was successfully updated." }
         format.json { render :show, status: :ok, location: @spp_payment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SppPaymentsController < ApplicationController
     @spp_payment.destroy!
 
     respond_to do |format|
-      format.html { redirect_to spp_payments_url, notice: "Spp payment was successfully destroyed." }
+      format.html { redirect_to spp_payments_url, notice: "SPP payment was successfully destroyed." }
       format.json { head :no_content }
     end
   end

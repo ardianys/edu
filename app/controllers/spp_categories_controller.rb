@@ -25,7 +25,7 @@ class SppCategoriesController < ApplicationController
 
     respond_to do |format|
       if @spp_category.save
-        format.html { redirect_to spp_category_url(@spp_category), notice: "Spp category was successfully created." }
+        format.html { redirect_to spp_category_url(@spp_category), notice: "SPP category was successfully created." }
         format.json { render :show, status: :created, location: @spp_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SppCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @spp_category.update(spp_category_params)
-        format.html { redirect_to spp_category_url(@spp_category), notice: "Spp category was successfully updated." }
+        format.html { redirect_to spp_category_url(@spp_category), notice: "SPP category was successfully updated." }
         format.json { render :show, status: :ok, location: @spp_category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SppCategoriesController < ApplicationController
     @spp_category.destroy!
 
     respond_to do |format|
-      format.html { redirect_to spp_categories_url, notice: "Spp category was successfully destroyed." }
+      format.html { redirect_to spp_categories_url, notice: "SPP category was successfully destroyed." }
       format.json { head :no_content }
     end
   end

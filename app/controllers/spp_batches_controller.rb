@@ -25,7 +25,7 @@ class SppBatchesController < ApplicationController
 
     respond_to do |format|
       if @spp_batch.save
-        format.html { redirect_to spp_batch_url(@spp_batch), notice: "Spp batch was successfully created." }
+        format.html { redirect_to spp_batch_url(@spp_batch), notice: "SPP batch was successfully created." }
         format.json { render :show, status: :created, location: @spp_batch }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SppBatchesController < ApplicationController
   def update
     respond_to do |format|
       if @spp_batch.update(spp_batch_params)
-        format.html { redirect_to spp_batch_url(@spp_batch), notice: "Spp batch was successfully updated." }
+        format.html { redirect_to spp_batch_url(@spp_batch), notice: "SPP batch was successfully updated." }
         format.json { render :show, status: :ok, location: @spp_batch }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SppBatchesController < ApplicationController
     @spp_batch.destroy!
 
     respond_to do |format|
-      format.html { redirect_to spp_batches_url, notice: "Spp batch was successfully destroyed." }
+      format.html { redirect_to spp_batches_url, notice: "SPP batch was successfully destroyed." }
       format.json { head :no_content }
     end
   end

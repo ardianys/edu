@@ -1,12 +1,16 @@
-<h1>Spp batches</h1>
-
-<div id="spp_batches">
-  <% @spp_batches.each do |spp_batch| %>
-    <%= render spp_batch %>
-    <p>
-      <%= link_to "Show this spp batch", spp_batch %>
-    </p>
-  <% end %>
+<div id="spp_batches" class="album bg-light">
+  <div class="container">
+    <%= link_to "New spp batch", new_spp_batch_path, class: "btn btn-primary" %>
+    <h1>SPP batches</h1>
+  </div>
 </div>
 
-<%= link_to "New spp batch", new_spp_batch_path %>
+<div id="spp_batches" class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <% @spp_batches.each do |spp_batch| %>
+        <%= render spp_batch %>
+      <% end %>
+    </div>
+  </div>
+</div>

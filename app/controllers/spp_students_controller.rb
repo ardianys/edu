@@ -25,7 +25,7 @@ class SppStudentsController < ApplicationController
 
     respond_to do |format|
       if @spp_student.save
-        format.html { redirect_to spp_student_url(@spp_student), notice: "Spp student was successfully created." }
+        format.html { redirect_to spp_student_url(@spp_student), notice: "SPP student was successfully created." }
         format.json { render :show, status: :created, location: @spp_student }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SppStudentsController < ApplicationController
   def update
     respond_to do |format|
       if @spp_student.update(spp_student_params)
-        format.html { redirect_to spp_student_url(@spp_student), notice: "Spp student was successfully updated." }
+        format.html { redirect_to spp_student_url(@spp_student), notice: "SPP student was successfully updated." }
         format.json { render :show, status: :ok, location: @spp_student }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SppStudentsController < ApplicationController
     @spp_student.destroy!
 
     respond_to do |format|
-      format.html { redirect_to spp_students_url, notice: "Spp student was successfully destroyed." }
+      format.html { redirect_to spp_students_url, notice: "SPP student was successfully destroyed." }
       format.json { head :no_content }
     end
   end

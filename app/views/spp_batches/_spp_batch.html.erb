@@ -1,12 +1,18 @@
-<div id="<%= dom_id spp_batch %>">
-  <p>
-    <strong>Start at:</strong>
-    <%= spp_batch.start_at %>
-  </p>
+<div id="<%= dom_id spp_batch %>" class="col">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <p>
+        <strong>Start at:</strong>
+        <%= spp_batch.start_at %>
+      </p>
 
-  <p>
-    <strong>End at:</strong>
-    <%= spp_batch.end_at %>
-  </p>
+      <p>
+        <strong>End at:</strong>
+        <%= spp_batch.end_at %>
+      </p>
 
+      <%= link_to "Show", spp_batch, class: "stretched-link" %>
+
+    </div>
+  </div>
 </div>
