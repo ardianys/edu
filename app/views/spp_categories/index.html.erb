@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Spp categories</h1>
+
+<div id="spp_categories">
+  <% @spp_categories.each do |spp_category| %>
+    <%= render spp_category %>
+    <p>
+      <%= link_to "Show this spp category", spp_category %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New spp category", new_spp_category_path %>

@@ -1,0 +1,2 @@
+class SppCategory < ApplicationRecord
+end

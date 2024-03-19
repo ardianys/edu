@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @spp_category %>
+
+<div>
+  <%= link_to "Edit this spp category", edit_spp_category_path(@spp_category) %> |
+  <%= link_to "Back to spp categories", spp_categories_path %>
+
+  <%= button_to "Destroy this spp category", @spp_category, method: :delete %>
+</div>

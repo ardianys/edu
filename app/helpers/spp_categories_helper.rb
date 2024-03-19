@@ -1,0 +1,2 @@
+module SppCategoriesHelper
+end
