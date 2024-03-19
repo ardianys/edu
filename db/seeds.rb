@@ -43,8 +43,6 @@ Campaign.all.each do |campaign|
 end
 
 # SPP
-# Import the Faker gem
-require 'faker'
 
 # Create a new SppBatch
 3.times do
