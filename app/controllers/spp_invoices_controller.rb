@@ -65,6 +65,6 @@ class SppInvoicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spp_invoice_params
-      params.require(:spp_invoice).permit(:student_id, :category_id, :amount, :paid_amount, :status)
+      params.require(:spp_invoice).permit(:spp_student_id, :spp_category_id, :amount, :paid_amount, :status)
     end
 end

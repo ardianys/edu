@@ -5,7 +5,7 @@ class CreateSppInvoices < ActiveRecord::Migration[7.1]
       t.references :spp_category, null: false, foreign_key: true
       t.integer :amount
       t.integer :paid_amount
-      t.string :status, default: "NEW" # NEW, PARTIAL, PAID
+      t.string :status
 
       t.timestamps
     end

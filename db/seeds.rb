@@ -18,9 +18,16 @@ User.create(
   role: "USER"
 )
 
+3.times do
+  Category.create(
+    title: Faker::Book.genre
+  )
+end
+
 # Create a new campaign
 10.times do
   Campaign.create(
+    category_id: Category.all.sample.id,
     title: Faker::Marketing.buzzwords,
     picture: Faker::Placeholdit.image(size: "50x50"),
     content: Faker::Lorem.paragraph(sentence_count: 10),
@@ -31,13 +38,8 @@ User.create(
 end
 
 Campaign.all.each do |campaign|
-  campaign.picture.attach( io: File.open(Rails.root.join('db/data/images/pict.jpeg')), filename: 'pict.jpeg')
-end
-
-3.times do
-  Category.create(
-    title: Faker::Book.genre
-  )
+  file = File.open(Rails.root.join('db', 'data', 'images', 'pict.jpeg'))
+  campaign.update(picture: file)
 end
 
 puts "Seeds generated successfully!"

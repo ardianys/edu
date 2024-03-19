@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  student: one
-  category: one
+  spp_student: one
+  spp_category: one
   amount: 1
   paid_amount: 1
   status: MyString
 
 two:
-  student: two
-  category: two
+  spp_student: two
+  spp_category: two
   amount: 1
   paid_amount: 1
   status: MyString

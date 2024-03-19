@@ -116,15 +116,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_013924) do
   end
 
   create_table "spp_invoices", force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "category_id", null: false
+    t.integer "spp_student_id", null: false
+    t.integer "spp_category_id", null: false
     t.integer "amount"
     t.integer "paid_amount"
-    t.string "status", default: "NEW"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_spp_invoices_on_category_id"
-    t.index ["student_id"], name: "index_spp_invoices_on_student_id"
+    t.index ["spp_category_id"], name: "index_spp_invoices_on_spp_category_id"
+    t.index ["spp_student_id"], name: "index_spp_invoices_on_spp_student_id"
   end
 
   create_table "spp_payments", force: :cascade do |t|
@@ -174,11 +174,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_013924) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "campaigns"
-  add_foreign_key "spp_invoices", "categories"
-  add_foreign_key "spp_invoices", "students"
+  add_foreign_key "spp_invoices", "spp_categories"
+  add_foreign_key "spp_invoices", "spp_students"
   add_foreign_key "spp_payments", "spp_batches"
   add_foreign_key "spp_payments", "spp_invoices"
   add_foreign_key "spp_payments", "spp_students"

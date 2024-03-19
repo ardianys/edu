@@ -15,10 +15,10 @@ class SppInvoicesTest < ApplicationSystemTestCase
     click_on "New spp invoice"
 
     fill_in "Amount", with: @spp_invoice.amount
-    fill_in "Category", with: @spp_invoice.category_id
     fill_in "Paid amount", with: @spp_invoice.paid_amount
+    fill_in "Spp category", with: @spp_invoice.spp_category_id
+    fill_in "Spp student", with: @spp_invoice.spp_student_id
     fill_in "Status", with: @spp_invoice.status
-    fill_in "Student", with: @spp_invoice.student_id
     click_on "Create Spp invoice"
 
     assert_text "Spp invoice was successfully created"
@@ -30,10 +30,10 @@ class SppInvoicesTest < ApplicationSystemTestCase
     click_on "Edit this spp invoice", match: :first
 
     fill_in "Amount", with: @spp_invoice.amount
-    fill_in "Category", with: @spp_invoice.category_id
     fill_in "Paid amount", with: @spp_invoice.paid_amount
+    fill_in "Spp category", with: @spp_invoice.spp_category_id
+    fill_in "Spp student", with: @spp_invoice.spp_student_id
     fill_in "Status", with: @spp_invoice.status
-    fill_in "Student", with: @spp_invoice.student_id
     click_on "Update Spp invoice"
 
     assert_text "Spp invoice was successfully updated"
