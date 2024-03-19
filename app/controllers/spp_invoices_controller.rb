@@ -3,7 +3,7 @@ class SppInvoicesController < ApplicationController
 
   # GET /spp_invoices or /spp_invoices.json
   def index
-    @spp_invoices = SppInvoice.all
+    @spp_invoices = SppInvoice.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /spp_invoices/1 or /spp_invoices/1.json

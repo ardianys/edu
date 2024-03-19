@@ -1,12 +1,16 @@
-<h1>SPP categories</h1>
-
-<div id="spp_categories">
-  <% @spp_categories.each do |spp_category| %>
-    <%= render spp_category %>
-    <p>
-      <%= link_to "Show this spp category", spp_category %>
-    </p>
-  <% end %>
+<div id="spp_categories" class="album bg-light">
+  <div class="container">
+    <%= link_to "New spp category", new_spp_category_path, class: "btn btn-primary" %>
+    <h1>SPP categories</h1>
+  </div>
 </div>
 
-<%= link_to "New spp category", new_spp_category_path %>
+<div id="spp_categories" class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <% @spp_categories.each do |spp_category| %>
+        <%= render spp_category %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,35 @@
-<h1>SPP students</h1>
-
-<div id="spp_students">
-  <% @spp_students.each do |spp_student| %>
-    <%= render spp_student %>
-    <p>
-      <%= link_to "Show this spp student", spp_student %>
-    </p>
-  <% end %>
+<div id="spp_students" class="album py-5 bg-light">
+  <div class="container">
+    <h1>SPP students</h1>
+    <%= link_to "New spp student", new_spp_student_path, class: "btn btn-success" %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Batch</th>
+          <th>Gender</th>
+          <th>Birth Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @spp_students.each do |spp_student| %>
+          <tr>
+            <td><%= spp_student.name %></td>
+            <td><%= spp_student.spp_batch.start_at.strftime('%Y') %></td>
+            <td><%= spp_student.gender %></td>
+            <td><%= spp_student.birth_at.strftime('%d-%m-%Y') %></td>
+            <td>
+              <%= link_to "Show", spp_student, class: "btn btn-primary" %>
+              <%= link_to "Edit", edit_spp_student_path(spp_student), class: "btn btn-secondary" %>
+              <%= link_to "Delete", spp_student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="apple_pagination mt-3">
+      <%= will_paginate @spp_students %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New spp student", new_spp_student_path %>

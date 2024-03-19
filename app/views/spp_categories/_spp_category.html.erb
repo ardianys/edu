@@ -1,7 +1,13 @@
-<div id="<%= dom_id spp_category %>">
-  <p>
-    <strong>Title:</strong>
-    <%= spp_category.title %>
-  </p>
+<div id="<%= dom_id spp_category %>" class="col">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <p>
+        <strong>Title:</strong>
+        <%= spp_category.title %>
+      </p>
 
+      <%= link_to "Show", spp_category, class: "stretched-link" %>
+
+    </div>
+  </div>
 </div>
