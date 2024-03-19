@@ -30,4 +30,14 @@ User.create(
   )
 end
 
+Campaign.all.each do |campaign|
+  campaign.picture.attach( io: File.open(Rails.root.join('db/data/images/pict.jpeg')), filename: 'pict.jpeg')
+end
+
+3.times do
+  Category.create(
+    title: Faker::Book.genre
+  )
+end
+
 puts "Seeds generated successfully!"

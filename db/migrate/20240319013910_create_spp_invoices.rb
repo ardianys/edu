@@ -1,11 +1,11 @@
 class CreateSppInvoices < ActiveRecord::Migration[7.1]
   def change
     create_table :spp_invoices do |t|
-      t.references :student, null: false, foreign_key: true
-      t.references :category, null: false, foreign_key: true
+      t.references :spp_student, null: false, foreign_key: true
+      t.references :spp_category, null: false, foreign_key: true
       t.integer :amount
       t.integer :paid_amount
-      t.string :status
+      t.string :status, default: "NEW" # NEW, PARTIAL, PAID
 
       t.timestamps
     end

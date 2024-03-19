@@ -7,5 +7,5 @@ rails g scaffold Category title
 rails g scaffold SppBatch start_at:datetime end_at:datetime
 rails g scaffold SppStudent spp_batch:references nis name gender birth_at:datetime address pict father mother phone email
 rails g scaffold SppCategory title
-rails g scaffold SppInvoice student:references category:references amount:integer paid_amount:integer status
+rails g scaffold SppInvoice spp_student:references spp_category:references amount:integer paid_amount:integer status
 rails g scaffold SppPayment spp_batch:references user:references spp_student:references spp_invoice:references tipe  amount:integer pay_at:datetime

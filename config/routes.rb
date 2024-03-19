@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  # SPP
   resources :spp_payments
   resources :spp_invoices
   resources :spp_categories
   resources :spp_students
   resources :spp_batches
+
+  # Campaign
   resources :categories
   resources :donations
   resources :campaigns do
@@ -12,6 +15,8 @@ Rails.application.routes.draw do
     end
   end
   resources :comments
+
+  # System
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }

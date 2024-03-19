@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_025124) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_19_013924) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -102,6 +102,64 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_025124) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "spp_batches", force: :cascade do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spp_categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spp_invoices", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "category_id", null: false
+    t.integer "amount"
+    t.integer "paid_amount"
+    t.string "status", default: "NEW"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_spp_invoices_on_category_id"
+    t.index ["student_id"], name: "index_spp_invoices_on_student_id"
+  end
+
+  create_table "spp_payments", force: :cascade do |t|
+    t.integer "spp_batch_id", null: false
+    t.integer "user_id", null: false
+    t.integer "spp_student_id", null: false
+    t.integer "spp_invoice_id", null: false
+    t.string "tipe", default: "CASH"
+    t.integer "amount"
+    t.datetime "pay_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spp_batch_id"], name: "index_spp_payments_on_spp_batch_id"
+    t.index ["spp_invoice_id"], name: "index_spp_payments_on_spp_invoice_id"
+    t.index ["spp_student_id"], name: "index_spp_payments_on_spp_student_id"
+    t.index ["user_id"], name: "index_spp_payments_on_user_id"
+  end
+
+  create_table "spp_students", force: :cascade do |t|
+    t.integer "spp_batch_id", null: false
+    t.string "nis"
+    t.string "name"
+    t.string "gender"
+    t.datetime "birth_at"
+    t.string "address"
+    t.string "pict"
+    t.string "father"
+    t.string "mother"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spp_batch_id"], name: "index_spp_students_on_spp_batch_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -119,4 +177,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_025124) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "donations", "campaigns"
+  add_foreign_key "spp_invoices", "categories"
+  add_foreign_key "spp_invoices", "students"
+  add_foreign_key "spp_payments", "spp_batches"
+  add_foreign_key "spp_payments", "spp_invoices"
+  add_foreign_key "spp_payments", "spp_students"
+  add_foreign_key "spp_payments", "users"
+  add_foreign_key "spp_students", "spp_batches"
 end
