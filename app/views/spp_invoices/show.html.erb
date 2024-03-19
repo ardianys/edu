@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @spp_invoice %>
+
+<div>
+  <%= link_to "Edit this spp invoice", edit_spp_invoice_path(@spp_invoice) %> |
+  <%= link_to "Back to spp invoices", spp_invoices_path %>
+
+  <%= button_to "Destroy this spp invoice", @spp_invoice, method: :delete %>
+</div>

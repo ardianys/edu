@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Spp invoices</h1>
+
+<div id="spp_invoices">
+  <% @spp_invoices.each do |spp_invoice| %>
+    <%= render spp_invoice %>
+    <p>
+      <%= link_to "Show this spp invoice", spp_invoice %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New spp invoice", new_spp_invoice_path %>

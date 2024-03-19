@@ -1,0 +1,2 @@
+module SppInvoicesHelper
+end
