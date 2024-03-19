@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spp_batch: one
+  user: one
+  spp_student: one
+  spp_invoice: one
+  tipe: MyString
+  amount: 1
+  pay_at: 2024-03-19 08:39:24
+
+two:
+  spp_batch: two
+  user: two
+  spp_student: two
+  spp_invoice: two
+  tipe: MyString
+  amount: 1
+  pay_at: 2024-03-19 08:39:24

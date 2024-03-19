@@ -1,0 +1,52 @@
+<%= form_with(model: spp_payment) do |form| %>
+  <% if spp_payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(spp_payment.errors.count, "error") %> prohibited this spp_payment from being saved:</h2>
+
+      <ul>
+        <% spp_payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :spp_batch_id, style: "display: block" %>
+    <%= form.text_field :spp_batch_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :spp_student_id, style: "display: block" %>
+    <%= form.text_field :spp_student_id %>
+  </div>
+
+  <div>
+    <%= form.label :spp_invoice_id, style: "display: block" %>
+    <%= form.text_field :spp_invoice_id %>
+  </div>
+
+  <div>
+    <%= form.label :tipe, style: "display: block" %>
+    <%= form.text_field :tipe %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div>
+    <%= form.label :pay_at, style: "display: block" %>
+    <%= form.datetime_field :pay_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

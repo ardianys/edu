@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @spp_payment %>
+
+<div>
+  <%= link_to "Edit this spp payment", edit_spp_payment_path(@spp_payment) %> |
+  <%= link_to "Back to spp payments", spp_payments_path %>
+
+  <%= button_to "Destroy this spp payment", @spp_payment, method: :delete %>
+</div>
