@@ -1,0 +1,27 @@
+<%= form_with(model: spp_batch) do |form| %>
+  <% if spp_batch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(spp_batch.errors.count, "error") %> prohibited this spp_batch from being saved:</h2>
+
+      <ul>
+        <% spp_batch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :start_at, style: "display: block" %>
+    <%= form.datetime_field :start_at %>
+  </div>
+
+  <div>
+    <%= form.label :end_at, style: "display: block" %>
+    <%= form.datetime_field :end_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

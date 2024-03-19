@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @spp_batch %>
+
+<div>
+  <%= link_to "Edit this spp batch", edit_spp_batch_path(@spp_batch) %> |
+  <%= link_to "Back to spp batches", spp_batches_path %>
+
+  <%= button_to "Destroy this spp batch", @spp_batch, method: :delete %>
+</div>

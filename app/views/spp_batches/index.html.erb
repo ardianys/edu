@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Spp batches</h1>
+
+<div id="spp_batches">
+  <% @spp_batches.each do |spp_batch| %>
+    <%= render spp_batch %>
+    <p>
+      <%= link_to "Show this spp batch", spp_batch %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New spp batch", new_spp_batch_path %>
