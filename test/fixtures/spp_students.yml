@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spp_batch: one
+  nis: MyString
+  name: MyString
+  gender: MyString
+  birth_at: 2024-03-19 08:38:22
+  address: MyString
+  pict: MyString
+  father: MyString
+  mother: MyString
+  phone: MyString
+  email: MyString
+
+two:
+  spp_batch: two
+  nis: MyString
+  name: MyString
+  gender: MyString
+  birth_at: 2024-03-19 08:38:22
+  address: MyString
+  pict: MyString
+  father: MyString
+  mother: MyString
+  phone: MyString
+  email: MyString

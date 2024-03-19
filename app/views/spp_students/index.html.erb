@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Spp students</h1>
+
+<div id="spp_students">
+  <% @spp_students.each do |spp_student| %>
+    <%= render spp_student %>
+    <p>
+      <%= link_to "Show this spp student", spp_student %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New spp student", new_spp_student_path %>

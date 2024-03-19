@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spp_students
   resources :spp_batches
   resources :categories
   resources :donations
