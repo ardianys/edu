@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # SPP
+  get '/spp', to: 'spp#index', as: 'spp_index'
   resources :spp_payments
   resources :spp_invoices
   resources :spp_categories
