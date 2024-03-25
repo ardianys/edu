@@ -7,13 +7,13 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>SPP batch</th>
-          <th>User</th>
-          <th>SPP student</th>
-          <th>SPP invoice</th>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Pay at</th>
+          <th>Angkatan</th>
+          <th>Staff</th>
+          <th>Murid</th>
+          <th>Invoice</th>
+          <th>Tipe</th>
+          <th>Jumlah</th>
+          <th>Tanggal</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -21,13 +21,13 @@
         <% @spp_payments.each do |spp_payment| %>
           <tr>
             <td><%= spp_payment.id %></td>
-            <td><%= spp_payment.spp_batch_id %></td>
-            <td><%= spp_payment.user_id %></td>
-            <td><%= spp_payment.spp_student_id %></td>
-            <td><%= spp_payment.spp_invoice_id %></td>
+            <td><%= spp_payment.spp_batch.start_at.strftime('%Y') %></td>
+            <td><%= spp_payment.user.name %></td>
+            <td><%= spp_payment.spp_student.name %></td>
+            <td>No <%= spp_payment.spp_invoice_id %></td>
             <td><%= spp_payment.tipe %></td>
-            <td><%= spp_payment.amount %></td>
-            <td><%= spp_payment.pay_at %></td>
+            <td><%= idr spp_payment.amount %></td>
+            <td><%= spp_payment.pay_at.strftime('%d-%m-%Y') %></td>
             <td>
               <%= link_to "Show", spp_payment, class: "btn btn-primary" %>
             </td>

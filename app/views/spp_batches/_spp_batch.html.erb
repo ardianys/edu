@@ -2,13 +2,9 @@
   <div class="card mb-4 shadow-sm">
     <div class="card-body">
       <p>
-        <strong>Start at:</strong>
-        <%= spp_batch.start_at %>
-      </p>
-
-      <p>
-        <strong>End at:</strong>
-        <%= spp_batch.end_at %>
+        <strong>
+          <%= spp_batch.start_at.strftime('%Y') %> s.d. <%= spp_batch.end_at.strftime('%Y') %>
+        </strong>
       </p>
 
       <%= link_to "Show", spp_batch, class: "stretched-link" %>

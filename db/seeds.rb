@@ -44,10 +44,10 @@ end
 # SPP
 
 # Create a new SppBatch
-3.times do
+(0..2).each do |year|
   SppBatch.create(
-    start_at: Faker::Date.backward(days: 180),
-    end_at: Faker::Date.forward(days: 180)
+    start_at: Date.new(Date.today.year + year, 7, 1), # 1 juli 2024
+    end_at: Date.new(Date.today.year + year + 1, 6, 30) # 30 juni 2025
   )
 end
 

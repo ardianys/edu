@@ -18,8 +18,8 @@
           <tr>
             <td><%= spp_invoice.spp_student.name %></td>
             <td><%= spp_invoice.spp_category.title %></td>
-            <td><%= spp_invoice.amount %></td>
-            <td><%= spp_invoice.paid_amount %></td>
+            <td><%= idr spp_invoice.amount %></td>
+            <td><%= idr spp_invoice.paid_amount %></td>
             <td><%= spp_invoice.status %></td>
             <td>
               <%= link_to "Show", spp_invoice, class: "btn btn-primary" %>
