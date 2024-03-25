@@ -3,10 +3,10 @@ require 'faker'
 
 # Create a new user
 User.create(
-  email: "admin@edu.com",
+  email: "admin2@edu.com",
   password: "password",
   password_confirmation: "password",
-  name: "Admin",
+  name: "Admin 2",
   role: "ADMIN"
 )
 
@@ -18,11 +18,10 @@ User.create(
   role: "USER"
 )
 
-3.times do
-  Category.create(
-    title: Faker::Book.genre
-  )
-end
+Category.create(title: 'Pembangunan Masjid')
+Category.create(title: 'Pendidikan')
+Category.create(title: 'Yatim Piatu')
+Category.create(title: 'Uang Riba')
 
 # Create a new campaign
 10.times do
@@ -72,39 +71,39 @@ SppBatch.all.each do |batch|
 end
 
 # Create a new SppCategory
-5.times do
-  SppCategory.create(
-    title: Faker::Lorem.word
-  )
-end
+SppCategory.create(title: "SPP")
+SppCategory.create(title: "Pembangunan")
+SppCategory.create(title: "Pendaftaran")
+SppCategory.create(title: "Seragam")
+SppCategory.create(title: "Zakat")
+
+bendahara = User.create(
+  email: "bendahara@luqmanulhakim.org",
+  password: "password",
+  password_confirmation: "password",
+  name: "Bendahara",
+  role: "BENDAHARA"
+)
 
 # Create a new SppInvoice
 SppStudent.all.each do |student|
   SppCategory.all.each do |category|
-    SppInvoice.create(
+    spp_invoice = SppInvoice.create(
       spp_student_id: student.id,
       spp_category_id: category.id,
       amount: Faker::Number.between(from: 1_000_000, to: 3_000_000),
       paid_amount: Faker::Number.between(from: 0, to: 3_000_000),
       status: ['NEW', 'PARTIAL', 'PAID'].sample
     )
-  end
-end
-
-# Create a new SppPayment
-SppBatch.all.each do |batch|
-  SppStudent.all.each do |student|
-    SppInvoice.all.each do |invoice|
-      SppPayment.create(
-        spp_batch_id: batch.id,
-        user_id: User.first.id, # Assuming you have a User model
-        spp_student_id: student.id,
-        spp_invoice_id: invoice.id,
-        tipe: ['CASH', 'TRANSFER'].sample,
-        amount: Faker::Number.between(from: 100_000, to: 1_000_000),
-        pay_at: Faker::Date.between(from: 2.days.ago, to: Date.today)
-      )
-    end
+    SppPayment.create(
+      spp_batch_id: student.spp_batch_id, # data angkatan diambil dari data angkatan student
+      user_id: bendahara.id, # bendahara yg menerima data pembayaran
+      spp_student_id: student.id,
+      spp_invoice_id: spp_invoice.id,
+      tipe: ['CASH', 'TRANSFER'].sample,
+      amount: Faker::Number.between(from: 100_000, to: 1_000_000),
+      pay_at: Faker::Date.between(from: 2.days.ago, to: Date.today)
+    )
   end
 end
 
