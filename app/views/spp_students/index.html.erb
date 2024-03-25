@@ -1,7 +1,27 @@
 <div id="spp_students" class="album py-5 bg-light">
   <div class="container">
-    <h1>SPP students</h1>
-    <%= link_to "New spp student", new_spp_student_path, class: "btn btn-success" %>
+    <h1>Siswa</h1>
+    <%= link_to "Tambah siswa", new_spp_student_path, class: "btn btn-success" %>
+
+    <div class="row">
+      <div class="col">
+
+        <form action="<%= spp_students_path %>" method="get">
+          <div class="form-group string optional admin_slug">
+            <label class="form-control-label string optional control-label" for="admin_slug">Search</label>
+            <input class="form-control string optional form-control" type="text" name="search" id="admin_slug" value="<%= params[:search] %>" placeholder="Search name">
+          </div>
+          <div class="form-actions">
+            <input type="submit" class="btn btn-sm btn-success" data-disable-with="Submit">
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+
     <table class="table">
       <thead>
         <tr>

@@ -3,10 +3,10 @@ require 'faker'
 
 # Create a new user
 User.create(
-  email: "admin2@edu.com",
+  email: "admin@edu.com",
   password: "password",
   password_confirmation: "password",
-  name: "Admin 2",
+  name: "Admin",
   role: "ADMIN"
 )
 

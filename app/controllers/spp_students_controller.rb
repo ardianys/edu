@@ -3,7 +3,11 @@ class SppStudentsController < ApplicationController
 
   # GET /spp_students or /spp_students.json
   def index
-    @spp_students = SppStudent.paginate(page: params[:page], per_page: 10)
+    if params[:search].present?
+      @spp_students = SppStudent.where("name LIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 10)
+    else
+      @spp_students = SppStudent.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   # GET /spp_students/1 or /spp_students/1.json
