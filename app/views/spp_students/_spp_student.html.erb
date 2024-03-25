@@ -1,7 +1,8 @@
 <div id="<%= dom_id spp_student %>">
+  <h1>Siswa #<%= spp_student.id %></h1>
   <p>
-    <strong>SPP batch:</strong>
-    <%= spp_student.spp_batch_id %>
+    <strong>Angkatan:</strong>
+    <%= spp_student.spp_batch.start_at.strftime('%Y') %>
   </p>
 
   <p>

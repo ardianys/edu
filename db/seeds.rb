@@ -92,7 +92,7 @@ SppStudent.all.each do |student|
       spp_student_id: student.id,
       spp_category_id: category.id,
       amount: Faker::Number.between(from: 1_000_000, to: 3_000_000),
-      paid_amount: Faker::Number.between(from: 0, to: 3_000_000),
+      paid_amount: Faker::Number.between(from: 0, to: 1_000_000),
       status: ['NEW', 'PARTIAL', 'PAID'].sample
     )
     SppPayment.create(

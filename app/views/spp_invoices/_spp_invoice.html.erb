@@ -1,22 +1,18 @@
 <div id="<%= dom_id spp_invoice %>">
+  <h1>Invoice #<%= spp_invoice.id %></h1>
   <p>
-    <strong>SPP student:</strong>
-    <%= spp_invoice.spp_student_id %>
-  </p>
-
-  <p>
-    <strong>SPP category:</strong>
-    <%= spp_invoice.spp_category_id %>
+    <strong>Category:</strong>
+    <%= spp_invoice.spp_category.title %>
   </p>
 
   <p>
     <strong>Amount:</strong>
-    <%= spp_invoice.amount %>
+    <%= idr spp_invoice.amount %>
   </p>
 
   <p>
     <strong>Paid amount:</strong>
-    <%= spp_invoice.paid_amount %>
+    <%= idr spp_invoice.paid_amount %>
   </p>
 
   <p>

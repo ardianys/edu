@@ -1,0 +1,32 @@
+<div id="spp_batches" class="album py-5 bg-light">
+  <div class="container">
+    <h1>Invoices</h1>
+    <%= link_to "New spp invoice", new_spp_invoice_path, class: "btn btn-success" %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Paid amount</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @spp_student.spp_invoices.each do |spp_invoice| %>
+          <tr>
+            <td><%= spp_invoice.spp_category.title %></td>
+            <td><%= idr spp_invoice.amount %></td>
+            <td><%= idr spp_invoice.paid_amount %></td>
+            <td><%= spp_invoice.status %></td>
+            <td>
+              <%= link_to "Show", spp_invoice, class: "btn btn-primary" %>
+              <%= link_to "Edit", edit_spp_invoice_path(spp_invoice), class: "btn btn-secondary" %>
+              <%= link_to "Delete", spp_invoice, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

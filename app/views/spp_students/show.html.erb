@@ -1,8 +1,15 @@
-<%= render @spp_student %>
-
-<div>
-  <%= link_to "Edit this spp student", edit_spp_student_path(@spp_student) %> |
-  <%= link_to "Back to spp students", spp_students_path %>
-
-  <%= button_to "Destroy this spp student", @spp_student, method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= render @spp_student %>
+      <div>
+        <%= link_to "Edit this spp student", edit_spp_student_path(@spp_student) %> |
+        <%= link_to "Back to spp students", spp_students_path %>
+        <%= button_to "Destroy this spp student", @spp_student, method: :delete %>
+      </div>
+    </div>
+    <div class="col">
+      <%= render 'spp_invoices' %>
+    </div>
+  </div>
 </div>

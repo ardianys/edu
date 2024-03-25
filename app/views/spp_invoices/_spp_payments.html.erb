@@ -1,0 +1,36 @@
+<div id="spp_students" class="album py-5 bg-light">
+  <div class="container">
+
+    <h1>Payments</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Staff</th>
+          <th>Tipe</th>
+          <th>Jumlah</th>
+          <th>Tanggal</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @spp_invoice.spp_payments.each do |spp_payment| %>
+          <tr>
+            <td><%= spp_payment.id %></td>
+            <td><%= spp_payment.user.name %></td>
+            <td><%= spp_payment.tipe %></td>
+            <td><%= idr spp_payment.amount %></td>
+            <td><%= spp_payment.pay_at.strftime('%d-%m-%Y') %></td>
+            <td>
+              <%= link_to "Show", spp_payment, class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+      <%= link_to "New spp payment", new_spp_payment_path, class: "btn btn-success" %>
+  </div>
+</div>
