@@ -1,4 +1,4 @@
-<div id="spp_students" class="album py-5 bg-light">
+<div id="spp_students">
   <div class="container">
 
     <h1>Payments</h1>
@@ -30,7 +30,7 @@
       </tbody>
     </table>
 
+    <%= render "form_payment", spp_payment: SppPayment.new %>
 
-      <%= link_to "New spp payment", new_spp_payment_path, class: "btn btn-success" %>
   </div>
 </div>
