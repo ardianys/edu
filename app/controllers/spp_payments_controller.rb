@@ -3,7 +3,7 @@ class SppPaymentsController < ApplicationController
 
   # GET /spp_payments or /spp_payments.json
   def index
-    @spp_payments = SppPayment.all
+    @spp_payments = SppPayment.paginate(page: params[:page])
   end
 
   # GET /spp_payments/1 or /spp_payments/1.json

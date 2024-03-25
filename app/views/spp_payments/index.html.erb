@@ -7,6 +7,7 @@
       <%= link_to "Show this spp payment", spp_payment %>
     </p>
   <% end %>
+  <%= will_paginate @spp_payments %>
 </div>
 
 <%= link_to "New spp payment", new_spp_payment_path %>
