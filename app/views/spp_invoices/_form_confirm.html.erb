@@ -1,0 +1,6 @@
+<%= form_with(model: spp_payment) do |form| %>
+  <input type="hidden" name="spp_payment[user_id]" value="<%= current_user.id %>">
+  <input type="hidden" name="spp_payment[tipe]" value="CASH">
+  <input type="hidden" name="spp_payment[pay_at]" value="<%= Date.today %>">
+  <button class="btn btn-success btn-sm" type="submit">Confirm!</button>
+<% end %>
