@@ -129,7 +129,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_013924) do
 
   create_table "spp_payments", force: :cascade do |t|
     t.integer "spp_batch_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.integer "spp_student_id", null: false
     t.integer "spp_invoice_id", null: false
     t.string "tipe", default: "CASH"
